@@ -39,12 +39,12 @@ void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
     printf("Inscription enregistree (%d)\n", *nb);
 }
 
-void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int *nb_etudiants) {
+void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int nb_etudiants) {
     int id, ue;
     float note;
-    scanf("%d %d %f",&id,&ue,&note);
+    scanf("%d %d %f", &id, &ue, &note);
 
-    if (id < 1 || id >= *nb_etudiants) {
+    if (id < 1 || id > nb_etudiants) {
         printf("Identifiant incorrect\n");
         return;
     }
@@ -74,10 +74,11 @@ int main() {
             INSCRIRE(etudiants, &nbEtudiants);
         }
         else if (strcmp(mot, "NOTE") == 0) {
-            NOTE(etudiants,&nbEtudiants);
+            NOTE(etudiants, &nbEtudiants);
         }
     }
 
 }
+
 
 
