@@ -13,12 +13,13 @@ enum {
 const float NOTE_MIN = 0.f, NOTE_MAX = 20.f;
 
 typedef struct {
-    int id;
-    char prenom[MAX_NOM];
-    char nom[MAX_NOM];
-    int semestres;
+    int id;// identifiant de l'étudiant
+    char prenom[MAX_NOM];// prenom de l'étudiant
+    char nom[MAX_NOM];// nom de l'étudiant;
+    int semestres;// semestres de l'étudiant
+    
 } Etudiant;
-
+// variable qui sert à inscrire un étudiant avec son nom prenom et lui donne un id 
 void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
     Etudiant e;
     scanf("%s %s", e.prenom, e.nom);
@@ -38,7 +39,11 @@ void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
     ++(*nb);
     printf("Inscription enregistree (%d)\n", *nb);
 }
+void CURSUS(Etudiant etudiants[MAX_ETUDIANTS]) {
+    printf("%s %s \n", etudiants->prenom, etudiants->nom);
+    }
 
+// variable qui sert ou plutot qui servira quand elle marchera a mettre des notes aux etudiants dans un tableau de 6/6 pour les 6 semstres differents et les 3années
 void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int nb_etudiants) {
     int id, ue;
     float note;
@@ -59,6 +64,7 @@ void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int nb_etudiants) {
     printf("Note enregistree\n");
 }
 
+// la fonction principale qui utilise toute les autres fonctions
 int main() {
     Etudiant etudiants[MAX_ETUDIANTS];
     int nbEtudiants = 0;
@@ -75,10 +81,12 @@ int main() {
         }
         else if (strcmp(mot, "NOTE") == 0) {
             NOTE(etudiants, &nbEtudiants);
+           
+        }
+        else if (strcmp(mot, "CURSUS") == 0) {
+            CURSUS(etudiants);
         }
     }
 
 }
-
-
 
