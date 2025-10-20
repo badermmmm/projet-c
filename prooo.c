@@ -17,7 +17,7 @@ typedef struct {
     char prenom[MAX_NOM];// prenom de l'étudiant
     char nom[MAX_NOM];// nom de l'étudiant;
     int semestres;// semestres de l'étudiant
-    
+    float note [MAX_ETUDIANTS];
 } Etudiant;
 // variable qui sert à inscrire un étudiant avec son nom prenom et lui donne un id 
 void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
@@ -89,4 +89,5 @@ int main() {
     }
 
 }
+
 
