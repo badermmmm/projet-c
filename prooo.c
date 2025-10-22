@@ -17,7 +17,7 @@ typedef struct {
     char prenom[MAX_NOM];// prenom de l'étudiant
     char nom[MAX_NOM];// nom de l'étudiant;
     int semestres;// semestres de l'étudiant
-    float note [MAX_ETUDIANTS];
+    float notes[NB_UE][NB_SEMESTRES];
 } Etudiant;
 // variable qui sert à inscrire un étudiant avec son nom prenom et lui donne un id 
 void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
@@ -40,12 +40,14 @@ void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
     printf("Inscription enregistree (%d)\n", *nb);
 }
 void CURSUS(Etudiant etudiants[MAX_ETUDIANTS]) {
-    printf("%s %s \n", etudiants->prenom, etudiants->nom);
-    }
+    printf("%d %s %s \n",etudiants->id+1, etudiants->prenom, etudiants->nom);
+    printf("%f", etudiants->notes);
+}
 
 // variable qui sert ou plutot qui servira quand elle marchera a mettre des notes aux etudiants dans un tableau de 6/6 pour les 6 semstres differents et les 3années
 void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int nb_etudiants) {
-    int id, ue;
+    int id;
+    int ue;
     float note;
     scanf("%d %d %f", &id, &ue, &note);
 
@@ -61,6 +63,7 @@ void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int nb_etudiants) {
         printf("Note incorrecte\n");
         return;
     }
+    etudiants[id-1].notes[ue-1][etudiants[id-1].semestres] =  note;
     printf("Note enregistree\n");
 }
 
@@ -76,12 +79,12 @@ int main() {
         if (strcmp(mot, "EXIT") == 0) {
             break;
         }
-        else if (strcmp(mot, "INSCRIRE") == 0) {
+        else if (strcmp(mot, "IN") == 0) {
             INSCRIRE(etudiants, &nbEtudiants);
         }
         else if (strcmp(mot, "NOTE") == 0) {
-            NOTE(etudiants, &nbEtudiants);
-           
+            NOTE(etudiants, nbEtudiants);
+
         }
         else if (strcmp(mot, "CURSUS") == 0) {
             CURSUS(etudiants);
@@ -89,5 +92,4 @@ int main() {
     }
 
 }
-
 
