@@ -39,9 +39,18 @@ void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
     ++(*nb);
     printf("Inscription enregistree (%d)\n", *nb);
 }
-void CURSUS(Etudiant etudiants[MAX_ETUDIANTS]) {
-    printf("%d %s %s \n",etudiants->id+1, etudiants->prenom, etudiants->nom);
-    printf("%f", etudiants->notes);
+void CURSUS(Etudiant etudiants[MAX_ETUDIANTS], int id) {
+    int nb_etudiants;
+    if (id < 1 || id > nb_etudiants) {
+        printf("Identifiant incorrect\n");
+        return;
+    }
+    scanf("%d", &id);
+    id--;
+    Etudiant*e = &etudiants[id];
+    printf("%d %s %s \n", etudiants[id].id + 1, etudiants[id]. prenom, etudiants[id].nom);
+    
+        printf("%f \n", etudiants[id].note);
 }
 
 // variable qui sert ou plutot qui servira quand elle marchera a mettre des notes aux etudiants dans un tableau de 6/6 pour les 6 semstres differents et les 3années
@@ -63,7 +72,7 @@ void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int nb_etudiants) {
         printf("Note incorrecte\n");
         return;
     }
-    etudiants[id-1].notes[ue-1][etudiants[id-1].semestres] =  note;
+    etudiants[id - 1].notes[ue - 1][etudiants[id - 1].semestres] = note;
     printf("Note enregistree\n");
 }
 
@@ -87,7 +96,7 @@ int main() {
 
         }
         else if (strcmp(mot, "CURSUS") == 0) {
-            CURSUS(etudiants);
+            CURSUS(etudiants,  nbEtudiants );
         }
     }
 
