@@ -21,7 +21,7 @@ typedef struct {
 } Etudiant;
 // variable qui sert à inscrire un étudiant avec son nom prenom et lui donne un id 
 void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
-    Etudiant e;
+    Etudiant e = { 0 };
     scanf("%s %s", e.prenom, e.nom);
 
     // Vérifie si l'étudiant existe déjà
@@ -41,17 +41,49 @@ void INSCRIRE(Etudiant etudiants[MAX_ETUDIANTS], int* nb) {
 }
 void CURSUS(Etudiant etudiants[MAX_ETUDIANTS], int id) {
     int nb_etudiants;
-    if (id < 1 || id > nb_etudiants) {
+    /*if (id < 1 || id = > nb_etudiants) {
         printf("Identifiant incorrect\n");
         return;
-    }
+    }*/
     scanf("%d", &id);
     id--;
-    Etudiant*e = &etudiants[id];
-    printf("%d %s %s \n", etudiants[id].id + 1, etudiants[id]. prenom, etudiants[id].nom);
+    Etudiant* e = &etudiants[id];
+    printf("%d %s %s \n", etudiants[id].id + 1, etudiants[id].prenom, etudiants[id].nom);
     
-        printf("%f \n", etudiants[id].note);
+   
+    
+    // Parcours des Semestres (lignes de l'affichage)
+       for (int s = 0; s < NB_SEMESTRES; s++) {
+
+            printf("  Semestre %d: ", s + 1);
+
+            // Parcours des Unités d'Enseignement (colonnes de l'affichage)
+            for (int ue = 0; ue < NB_UE; ue++) {
+                // e->notes[UE][SEMESTRE]
+                float note = e->notes[ue][s];
+
+                // Si la note est non nulle, l'afficher. Sinon, afficher un tiret (-)
+                if (note != 0.0f) {
+                    printf("%.2f", note);
+                }
+                else {
+                    // Utiliser 0.00 ou un tiret pour les notes non données
+                    printf("--");
+                }
+
+                // Ajouter un séparateur sauf après la dernière note
+                if (ue < NB_UE - 1) {
+                    printf(" / ");
+                }
+            }
+
+            // Sauter à la ligne pour le semestre suivant
+            printf("\n");
+        }
+        printf("----------------------------\n");
+	
 }
+
 
 // variable qui sert ou plutot qui servira quand elle marchera a mettre des notes aux etudiants dans un tableau de 6/6 pour les 6 semstres differents et les 3années
 void NOTE(Etudiant etudiants[MAX_ETUDIANTS], int nb_etudiants) {
@@ -96,9 +128,8 @@ int main() {
 
         }
         else if (strcmp(mot, "CURSUS") == 0) {
-            CURSUS(etudiants,  nbEtudiants );
+            CURSUS(etudiants, nbEtudiants);
         }
     }
 
 }
-
