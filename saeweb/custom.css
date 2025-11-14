@@ -5,7 +5,11 @@ body {
     text-align: center;
 
 }
-
+.active-page {
+    text-decoration: underline;
+    color: #ffffff;
+    font-weight: bold;
+}
 .context-box li{
     text-align: left;
 }
@@ -87,6 +91,7 @@ h4 {
 
 .card:hover {
     transform: scale(1.03);
+
 }
 .context-box:hover {
     transform: scale(1.2);
@@ -173,5 +178,6 @@ footer {
     .nav a:hover {
         background: rgba(255, 255, 255, 0.25);
     }
+
 }
 
