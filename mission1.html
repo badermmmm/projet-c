@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rapport SAE</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<div class="bar">
+    <h1>Rapport SAE</h1>
+
+
+
+    <nav class="nav">
+        <ul>
+            <li><a href="Index.html"  >Accueil</a></li>
+            <li><a href="mission1.html">Mission 1</a></li>
+            <li><a href="mission2.html">Mission 2</a></li>
+            <li><a href="mission3.html">Mission 3</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="miss1">
+    <div class="con-box">
+  <h2>Le Contexte</h2>
+  <p>
+    Kdou une entreprise commerciale qui vend des produits alimentaires achetés à des fournnisseurs du monde entier. Kdou cherche a etre eco-responsable et rentable. notre equipe doit exploiter les donnees de Kdou pour pouvoir ensuite proposer des solutions a Kdou pour qu'ils deviennent eco-friendly.
+  </p>
+</div>
+    <div class="con-box">
+    <h3>Bilan sur l'étude des donées</h3>
+        <table>
+            <tr>
+                <th></th>
+                <th>Clé primaire</th>
+                <th>Clé candidate </th>
+                <th>Clé étrangère</th>
+            </tr>
+            <tr>
+                <th>Fournisseur</th>
+                <td>n°fournisseur</td>
+                <td>Contact</td>
+                <td>***</td>
+            </tr>
+            <tr>
+                <th>Produit</th>
+                <td>Réf produit</td>
+                <td>Nom du produit</td>
+                <td>n°fournisseur
+                    Code catégorie</td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>Code catégorie</td>
+                <td>Nom de catégorie</td>
+                <td>***</td>
+            </tr>
+            <tr>
+                <th>Clientèle</th>
+                <td>Code client</td>
+                <td>Contact/Société</td>
+                <td>***</td>
+            </tr>
+            <tr>
+                <th>Commande</th>
+                <td>n°commande</td>
+                <td>***</td>
+                <td>Code client</td>
+            </tr>
+            <tr>
+                <th>Details commande</th>
+                <td>***</td>
+                <td>***</td>
+                <td>Code Réf du produit/n°commande
+                </td>
+            </tr>
+        </table>
+    <p> pour l'étude de données ont a d'abord fait la table des clés primaires, clés étrangères et les clés candidantes. Puis on a utilisé la fonction trier ou control+f pour trouver ce qui etait demandé</p>
+    </div>
+    <div class="con-box">
+    <h4>Amelioration possible</h4>
+        <p>  Il faudrait mettre en place des contrôles automatiques pour vérifier les dates et les statuts de commande, normaliser les noms de catégories et de pays, et supprimer les doublons. Il serait aussi utile de rendre certaines informations obligatoires (comme les contacts et les prix) et de former les personnes qui saisissent les données afin d’éviter les erreurs et d’avoir une base plus fiable.</p>
+</div>
+</div>
+</body>
+<footer>
+    ©SAE BD REALISER PAR BADER/ABDEL/HATIM/IBRAHIM
+</footer>
+
+</html>
