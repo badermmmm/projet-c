@@ -3,10 +3,14 @@ body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
     text-align: center;
+
 }
 
+.context-box li{
+    text-align: left;
+}
 .nav {
-    background-color: #2b6cb0;
+    background-color:darkred;
     color: white;
     display: flex;
     justify-content:space-around;
@@ -16,7 +20,7 @@ body {
 }
 
 h1 {
-    font-size: 1.3rem;
+    font-size: 2.6rem;
     font-weight: 600;
     text-align: center;
 }
@@ -63,8 +67,8 @@ h4 {
 }
 .members {
     display: flex;
-    justify-content: center; /* centre horizontalement les cartes */
-    align-items: flex-start;  /* aligne en haut */
+    justify-content: center;
+    align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -82,6 +86,9 @@ h4 {
 .card:hover {
     transform: scale(1.03);
 }
+.context-box:hover {
+    transform: scale(1.2);
+}
 
 .card img {
     width: 80%;
@@ -92,31 +99,32 @@ h4 {
     width: 50%;
     margin: 10px auto;
     padding: 10px;
-    border: 5px solid #007bff;
+    border: 5px solid darkred;
     border-radius: 15px;
     background-color: #e6f0ff;
     box-shadow: 3px 3px 12px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
 }
 .con-box{
-    width: 40%;             /* largeur de la box */
-    margin: 30px auto;      /* centrée horizontalement avec un peu de marge */
-    padding: 40px;          /* espace à l'intérieur de la box */
-    border: 1px solid #333; /* bordure noire */
-    border-radius: 10px;    /* coins arrondis */
-    background-color: #f9f9f9; /* couleur de fond claire */
-    font-size: 18px;        /* taille du texte */
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2); /* ombre pour relief */
+    width: 40%;
+    margin: 30px auto;
+    padding: 40px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-size: 18px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 }
 
 .conclusion-box {
-    width: 80%;             /* largeur de la box */
-    margin: 50px auto;      /* centrée horizontalement avec un peu de marge */
-    padding: 30px;          /* espace à l'intérieur de la box */
-    border: 2px solid #333; /* bordure noire */
-    border-radius: 10px;    /* coins arrondis */
-    background-color: #f9f9f9; /* couleur de fond claire */
-    font-size: 18px;        /* taille du texte */
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2); /* ombre pour relief */
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-size: 18px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 }
 
 table {
@@ -137,8 +145,15 @@ th {
     color: #fff;
 }
 
+footer {
+    background: #c62828;
+    padding: 21px 0;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin-top: 120px;
+}
 
-/* === RESPONSIVE MODE === */
 @media (max-width: 768px) {
     .nav ul {
         flex-direction: column;
