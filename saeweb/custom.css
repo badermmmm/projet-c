@@ -32,7 +32,8 @@ h2 {
 .miss1 h2{
     font-size: 1.3rem;
     font-weight: 600;
-    text-align:left;
+    text-align:center;
+    text-decoration: underline;
 }
 
 h3 {
@@ -146,7 +147,7 @@ th {
 }
 
 footer {
-    background: #c62828;
+    background: #8b0000;
     padding: 21px 0;
     text-align: center;
     color: white;
