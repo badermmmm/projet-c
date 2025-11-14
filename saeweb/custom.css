@@ -6,6 +6,14 @@ body {
     text-align: center;
 
 }
+.bar {
+    background-color: darkred;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* titre à gauche / menu à droite */
+    align-items: center;
+    padding: 1px 5px;
+}
 .active-page {
     text-decoration: underline;
     color: #ffffff;
@@ -25,17 +33,18 @@ body {
 }
 
 h1 {
-    font-size: 2.6rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 400;
     text-align: center;
+    margin-left: 100px;
 }
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     font-weight: 600;
     text-align: center;
 }
 .miss1 h2{
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     font-weight: 600;
     text-align:center;
     text-decoration: underline;
@@ -43,13 +52,13 @@ h2 {
 
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     font-weight: 600;
     text-align: center;
     text-decoration: underline;
 }
 h4 {
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     font-weight: 600;
     text-align:center;
     text-decoration: underline;
@@ -59,13 +68,14 @@ h4 {
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 16px;
+    gap: 12px;
 }
 
 .nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 250;
     padding: 8px 12px;
     border-radius: 6px;
     transition: background 0.2s ease;
