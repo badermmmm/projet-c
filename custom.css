@@ -58,10 +58,10 @@ h3 {
     text-decoration: underline;
 }
 h4 {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align:center;
-    text-decoration: underline;
+
 }
 .nav ul {
     list-style: none;
@@ -137,8 +137,13 @@ h4 {
     box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
     overflow-x: auto;
 
-}
 
+}
+p,.con-box{
+    text-align: left;
+
+    font-weight: bold;
+}
 .conclusion-box {
     width: 80%;
     margin: 50px auto;
